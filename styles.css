@@ -3,3 +3,14 @@
   box-sizing: border-box;
   font-size: 25px;
 }
+
+#project-name {
+  margin-left: 15px;
+}
+
+form {
+  width: 100%;
+  padding-right: 100px;
+  padding-left: 50px;
+  padding-top: 50px;
+}
