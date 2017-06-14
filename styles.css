@@ -17,7 +17,13 @@ form {
   padding-top: 20px;
 }
 
-.arrows button {
+#new-button {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#prev-arrow,
+#next-arrow {
   background: transparent;
   border: none;
   cursor: pointer;
