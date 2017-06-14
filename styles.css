@@ -4,16 +4,12 @@
   font-size: 25px;
 }
 
-#project-name {
-  margin-left: 15px;
+body {
+  overflow: hidden;
 }
 
 #input-label {
   font-weight: normal;
-}
-
-#input-button {
-  padding-top: 10px;
 }
 
 form {
