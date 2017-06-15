@@ -6,17 +6,7 @@
   box-sizing: border-box;
 }
 
-#input-label {
-  font-weight: normal;
-}
-
-form {
-  width: 100%;
-  padding-right: 100px;
-  padding-left: 50px;
-  padding-top: 20px;
-}
-
+/* main page */
 body {
   font: normal 16px/1.5 'Rokkitt', sans-serif;
   background: #5e6973;
@@ -25,7 +15,7 @@ body {
 
 .section {
   background: #f45b69;
-  padding: 50px 0;
+  padding: 50px 100px;
 }
 
 .section .container {
@@ -41,33 +31,37 @@ body {
 
 .timeline {
   white-space: nowrap;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .timeline ol {
   font-size: 0;
   width: 100vw;
-  padding: 250px 0;
+  padding: 250px 100px;
   transition: all 1s;
 }
 
+/* length of each line -end */
 .timeline ol li {
   position: relative;
   display: inline-block;
   list-style-type: none;
-  width: 160px;
+  width: 1000px;
   height: 3px;
   background: #fff;
 }
 
+.timeline ol li:first-child,
 .timeline ol li:last-child {
-  width: 280px;
+  width: 0;
 }
 
+/* margin after dots */
 .timeline ol li:not(:first-child) {
   margin-left: 14px;
 }
 
+/* event dots */
 .timeline ol li:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -81,6 +75,7 @@ body {
   background: #f45b69;
 }
 
+/* content boxes */
 .timeline ol li div {
   position: absolute;
   left: calc(100% + 7px);
@@ -92,6 +87,7 @@ body {
   background: white;
 }
 
+/* small triangle */
 .timeline ol li div::before {
   content: '';
   position: absolute;
@@ -102,6 +98,7 @@ body {
   border-style: solid;
 }
 
+/* don't change */
 .timeline ol li:nth-child(odd) div {
   top: -16px;
   transform: translateY(-100%);
@@ -123,12 +120,30 @@ body {
   border-color: transparent transparent transparent white;
 }
 
+/* end of don't change */
+
 .main-create-button {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
+/* event form */
+form {
+  width: 100%;
+  padding-right: 100px;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+#event {
+  max-width: 1200px;
+}
+
 #event-header {
   background: #f45b69;
+}
+
+#input-label {
+  font-weight: normal;
 }
