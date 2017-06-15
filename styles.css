@@ -17,20 +17,6 @@ form {
   padding-top: 20px;
 }
 
-#new-button {
-  display: flex;
-  justify-content: flex-start;
-}
-
-#prev-arrow,
-#next-arrow {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding-left: 20px;
-}
-
 body {
   font: normal 16px/1.5 'Rokkitt', sans-serif;
   background: #5e6973;
@@ -137,21 +123,12 @@ body {
   border-color: transparent transparent transparent white;
 }
 
-.timeline .arrows {
+.main-create-button {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.timeline .arrows .arrow__prev {
-  margin-right: 20px;
-}
-
-.timeline .disabled {
-  opacity: 0.5;
-}
-
-.timeline .arrows img {
-  width: 45px;
-  height: 45px;
+#event-header {
+  background: #f45b69;
 }

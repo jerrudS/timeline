@@ -10,60 +10,56 @@
   </head>
   <body>
 <!-- main page -->
-    <section class="section intro">
-      <div class="container">
-        <h1>TIMELINE</h1>
-      </div>
-    </section>
-    <section class="timeline">
-      <ol>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
+    <div class="main-page">
+      <section class="section intro">
+        <div class="container">
+          <h1>TIMELINE</h1>
+        </div>
+      </section>
+      <section class="timeline">
+        <ol>
+          <li>
+            <div>
+              <time>1934</time>
+              Some content here
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>1934</time>
+              Some content here
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>1934</time>
+              Some content here
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>1934</time>
+              Some content here
+            </div>
+          </li>
 
-    <!-- more list items here -->
+      <!-- more list items here -->
 
-        <li></li>
-      </ol>
+          <li></li>
+        </ol>
 
-      <div class="arrows">
-        <button id="new-button" type="button" class="btn btn-primary">Create New Event</button>
-        <button id="prev-arrow" class="arrow arrow-prev disabled" disabled>
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow"/>
-        </button>
-        <button id="next-arrow" class="arrow arrow-next">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow"/>
-        </button>
-      </div>
-    </section>
+        <div class="main-create-button">
+          <button id="new-button" type="button" class="btn btn-primary">Create New Event</button>
+        </div>
+      </section>
+    </div>
 
 <!-- form -->
-    <div class="hidden container-fluid">
+    <div id="event" class="hidden container-fluid">
       <div class="row">
         <div class="col-xs-12">
-          <form id="event" class="form-horizontal">
-            <div class="form-group">
+          <form class="form-horizontal">
+            <div id="event-header" class="form-group">
               <div class="col-sm-4">
                 <h1>TIMELINE</h1>
               </div>
