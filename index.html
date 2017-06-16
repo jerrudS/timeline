@@ -10,30 +10,31 @@
   </head>
   <body>
 <!-- main page -->
-    <div class="main-page">
-      <section class="section intro">
-        <div class="container">
-          <h1>TIMELINE</h1>
+    <div class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div id="main-header" class="col-xs-12">
+            <h1>TIMELINE</h1>
+          </div>
         </div>
-      </section>
+      </div>
       <section class="timeline">
-        <ol>
+        <ul>
           <li>
             <div>
-              <time>User Date of Birth</time>
+              <time>Date of Birth</time>
+              <p>'name of user' was born.</p>
             </div>
           </li>
           <li>
-            <div>
-              Current Time
-            </div>
+            <div class="current">Current Date</div>
           </li>
 
-    <!-- more list items here -->
 
-          <li></li>
-        </ol>
 
+      <!-- more list items here -->
+
+        </ul>
         <div class="main-create-button">
           <button id="new-button" type="button" class="btn btn-primary">Create New Event</button>
         </div>
@@ -41,12 +42,12 @@
     </div>
 
 <!-- form -->
-    <div id="event" class="hidden container-fluid">
+    <div id="event" class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
           <form class="form-horizontal">
             <div id="event-header" class="form-group">
-              <div class="col-sm-4">
+              <div id="header-div" class="col-sm-4">
                 <h1>TIMELINE</h1>
               </div>
             </div>

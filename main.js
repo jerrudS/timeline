@@ -26,9 +26,9 @@ var $createButton = document.querySelector('#new-button')
 
 $createButton.addEventListener('click', function (event) {
   event.preventDefault()
-  var $mainPage = document.querySelector('.main-page')
+  var $mainPage = document.querySelector('.main')
   var $eventForm = document.querySelector('#event')
 
-  $mainPage.setAttribute('class', 'hidden main-page')
+  $mainPage.setAttribute('class', 'hidden main')
   $eventForm.setAttribute('class', 'container-fluid')
 })
