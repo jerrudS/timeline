@@ -9,47 +9,64 @@ h1,
   background-color: #f45b69;
 }
 
-.timeline ul {
-  font-size: 15px;
-  width: 100vw;
-  padding: 268px 15px;
+section {
+  height: 620px;
 }
 
-.timeline ul li {
-  position: absolute;
-  display: inline-block;
-  list-style-type: none;
-  width: 96%;
-  height: 1px;
+.start-dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
   background: black;
+  top: 257px;
+  position: relative;
+  margin-left: 16px;
 }
 
-.timeline ul li::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  background: black;
-}
-
-.timeline ul li div {
-  margin-top: 20px;
-  padding: 2px;
-  width: 100px;
-  border-style: solid;
-  border-width: thin;
-}
-
-.current {
+.end-arrow {
+  border-left: 15px solid black;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+  position: relative;
+  top: 222px;
   float: right;
+  margin-right: 14px;
 }
 
-.main-create-button {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
+.timeline {
+  top: 250px;
+  position: relative;
+  border-top: 1px solid black;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style-type: none;
+}
+
+.middle {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  list-style-type: none;
+}
+
+.end {
+  position: absolute;
+  top: 0;
+  right: 0;
+  list-style-type: none;
+}
+
+.create-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* event form */
@@ -69,4 +86,8 @@ h1,
 
 #input-label {
   font-weight: normal;
+}
+
+#form-return {
+  margin-top: 10px;
 }

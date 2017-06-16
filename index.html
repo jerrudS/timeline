@@ -18,24 +18,15 @@
           </div>
         </div>
       </div>
-      <section class="timeline">
-        <ul>
-          <li>
-            <div>
-              <time>Date of Birth</time>
-              <p>'name of user' was born.</p>
-            </div>
-          </li>
-          <li>
-            <div class="current">Current Date</div>
-          </li>
-
-
-
-      <!-- more list items here -->
-
+      <section>
+        <div class="start-dot"></div>
+        <ul class="timeline">
+          <li class="start">Birthdate</li>
+          <li class="middle">Middle</li>
+          <li class="end">Current</li>
         </ul>
-        <div class="main-create-button">
+        <div class="end-arrow"></div>
+        <div class="create-button">
           <button id="new-button" type="button" class="btn btn-primary">Create New Event</button>
         </div>
       </section>
@@ -45,7 +36,7 @@
     <div id="event" class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
-          <form class="form-horizontal">
+          <form id="data" class="form-horizontal">
             <div id="event-header" class="form-group">
               <div id="header-div" class="col-sm-4">
                 <h1>TIMELINE</h1>
@@ -58,7 +49,7 @@
             </div>
             <div class="form-group">
               <label for="event-title" class="font-weight-bold col-sm-2 control-label">Event Title:</label>
-              <div id="event-title" class="col-sm-7">
+              <div id="event-title" class="col-sm-5">
                 <input name="title" type="event-title" class="form-control" placeholder="Enter Event Title Here"/>
               </div>
             </div>
@@ -70,7 +61,7 @@
             </div>
             <div class="form-group">
               <label for="content" class="font-weight-bold col-sm-2 control-label">Content Description:</label>
-              <div class="col-sm-10">
+              <div class="col-sm-8">
                 <textarea id="description" name="description" class="form-control" rows="10"></textarea>
                 <label id="input-label" class="font-weight-normal" for="input-file">Attach files by dragging and dropping, pasting from the clipboard, or select "Choose File" below.</label>
                 <input id="input-button" name="file" type="file"/>
@@ -79,6 +70,9 @@
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <button id="submit" type="submit" class="btn btn-primary">Create New Event</button>
+              </div>
+              <div class="col-sm-offset-2 col-sm-10">
+                <button id="form-return" type="button" class="btn btn-success">Return to Main Page</button>
               </div>
             </div>
           </form>
