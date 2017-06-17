@@ -20,8 +20,11 @@ window.addEventListener('DOMContentLoaded', function (event) {
     }
     data.push(newData)
 
-    var $additional = document.querySelector('.middle')
-    $additional.textContent = data[0].title
+    var $newTitle = document.querySelector('.middle')
+    $newTitle.textContent = data[0].title
+    var $tempP = document.createElement('p')
+    $tempP.textContent = data[0].date
+    $newTitle.insertAdjacentElement('beforeend', $tempP)
   })
 })
 
