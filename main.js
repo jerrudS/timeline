@@ -1,15 +1,21 @@
 /* eslint-disable no-unused-vars */
 
-/* update form data array */
 var data = []
 
-window.addEventListener('DOMContentLoaded', function (event) {
-  var $eventForm = document.querySelector('#data')
+function formMain() {
+  var $mainPage = document.querySelector('.main')
+  var $eventForm = document.querySelector('#event')
+  $mainPage.setAttribute('class', 'main')
+  $eventForm.setAttribute('class', 'hidden container-fluid')
+}
 
-  $eventForm.addEventListener('submit', function (event) {
+window.addEventListener('DOMContentLoaded', function (event) {
+  var $eventData = document.querySelector('#data')
+
+  $eventData.addEventListener('submit', function (event) {
     event.preventDefault()
 
-    var userFormData = new FormData($eventForm)
+    var userFormData = new FormData($eventData)
     console.log(userFormData)
 
     var newData = {
@@ -25,10 +31,11 @@ window.addEventListener('DOMContentLoaded', function (event) {
     var $tempP = document.createElement('p')
     $tempP.textContent = data[0].date
     $newTitle.insertAdjacentElement('beforeend', $tempP)
+
+    formMain()
   })
 })
 
-/* navigate from main page to event form */
 var $createButton = document.querySelector('#new-button')
 
 $createButton.addEventListener('click', function (event) {
@@ -40,7 +47,6 @@ $createButton.addEventListener('click', function (event) {
   $eventForm.setAttribute('class', 'container-fluid')
 })
 
-/* navigate from event form back to main page */
 var $toMain = document.querySelector('#form-return')
 
 $toMain.addEventListener('click', function (event) {
@@ -48,8 +54,7 @@ $toMain.addEventListener('click', function (event) {
   var $mainPage = document.querySelector('.main')
   var $eventForm = document.querySelector('#event')
 
-  $mainPage.setAttribute('class', 'main')
-  $eventForm.setAttribute('class', 'hidden container-fluid')
+  formMain()
 })
 
 var $current = document.querySelector('.end')
