@@ -20,7 +20,7 @@ section {
   background: black;
   top: 257px;
   position: relative;
-  margin-left: 16px;
+  margin-left: 35px;
 }
 
 .end-arrow {
@@ -30,37 +30,66 @@ section {
   position: relative;
   top: 222px;
   float: right;
-  margin-right: 14px;
+  margin-right: 65px;
+}
+
+.event-branch {
+  height: 15px;
+  width: 1px;
+  background: black;
+  position: relative;
+  left: 50%;
+  top: 250px;
 }
 
 .timeline {
-  top: 250px;
+  top: 235px;
   position: relative;
-  border-top: 1px solid black;
-  margin-left: 30px;
-  margin-right: 30px;
+  border-top: 2px dotted black;
+  margin-left: 50px;
+  margin-right: 80px;
 }
 
 .start {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -40px;
   list-style-type: none;
+  border: solid 1px black;
+  padding: 4px 8px;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 2px 2px #46484a;
 }
 
 .middle {
   position: absolute;
   top: 0;
-  right: 50%;
+  left: 50%;
   list-style-type: none;
+  border: solid 1px black;
+  padding: 4px 8px;
+  margin-top: 13px;
+  background-color: white;
+  box-shadow: 2px 2px #46484a;
+}
+
+.middle p {
+  background-color: white;
+  margin: auto;
 }
 
 .end {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -70px;
   list-style-type: none;
-  width: 100px;
+  width: 125px;
+  border: solid 1px black;
+  padding: 4px 8px;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 2px 2px #46484a;
 }
 
 .create-button {
