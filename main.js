@@ -27,11 +27,11 @@ var $createButton = document.querySelector('#new-button')
 
 $createButton.addEventListener('click', function (event) {
   event.preventDefault()
-  var $mainPage = document.querySelector('.main')
-  var $eventForm = document.querySelector('#event')
+  var $mainPage = document.querySelector('.view-main')
+  var $eventForm = document.querySelector('.view-form')
 
-  $mainPage.setAttribute('class', 'hidden main')
-  $eventForm.setAttribute('class', 'container-fluid')
+  $mainPage.setAttribute('class', 'hidden view-main')
+  $eventForm.setAttribute('class', 'view-form')
 })
 
 /* navigate from event form back to main page */
@@ -39,9 +39,9 @@ var $toMain = document.querySelector('#form-return')
 
 $toMain.addEventListener('click', function (event) {
   event.preventDefault()
-  var $mainPage = document.querySelector('.main')
-  var $eventForm = document.querySelector('#event')
+  var $mainPage = document.querySelector('.view-main')
+  var $eventForm = document.querySelector('.view-form')
 
-  $mainPage.setAttribute('class', 'main')
-  $eventForm.setAttribute('class', 'hidden container-fluid')
+  $mainPage.setAttribute('class', 'view-main')
+  $eventForm.setAttribute('class', 'hidden view-form')
 })
