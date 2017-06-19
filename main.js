@@ -26,11 +26,16 @@ window.addEventListener('DOMContentLoaded', function (event) {
     }
     data.push(newData)
 
-    var $newTitle = document.querySelector('.middle')
-    $newTitle.textContent = data[0].title
-    var $tempP = document.createElement('p')
-    $tempP.textContent = data[0].date
-    $newTitle.insertAdjacentElement('beforeend', $tempP)
+    for (var i = 0; i < data.length; i++) {
+      var $newTitle = document.querySelector('.start')
+      var $tempLi = document.createElement('li')
+      $newTitle.insertAdjacentElement('afterend', $tempLi)
+      $tempLi.textContent = data[i].title
+      var $tempP = document.createElement('p')
+      $tempLi.insertAdjacentElement('beforeend', $tempP)
+      $tempP.textContent = data[i].date
+      $tempLi.classList.add('event')
+    }
 
     formMain()
   })

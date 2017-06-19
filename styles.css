@@ -62,10 +62,10 @@ section {
   box-shadow: 2px 2px #46484a;
 }
 
-.middle {
+.event {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 1%;
   list-style-type: none;
   border: solid 1px black;
   padding: 4px 8px;
@@ -74,7 +74,7 @@ section {
   box-shadow: 2px 2px #46484a;
 }
 
-.middle p {
+.event p {
   background-color: white;
   margin: auto;
 }
