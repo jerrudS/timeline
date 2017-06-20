@@ -1,6 +1,11 @@
 /* eslint-disable no-unused-vars */
 
-var data = []
+var data = [
+  {
+    title: 'Event1',
+    date: 555555
+  }
+]
 
 function formMain() {
   var $mainPage = document.querySelector('.hidden.view-main')
@@ -16,21 +21,39 @@ function mainForm() {
   $eventForm.setAttribute('class', 'view-form')
 }
 
-function makeEvent(events) {
-  var $start = document.querySelector('.start')
-  var $tempLi = document.createElement('li')
-  var $tempP = document.createElement('p')
+function makeTimeline(events) {
+  var $line = document.createElement('ul')
+  var $title = document.createElement('li')
+  var $date = document.createElement('li')
+  var $currentTime = document.createElement('li')
+  var $startDot = document.createElement('div')
+  var $endArrow = document.createElement('div')
 
-  $start.insertAdjacentElement('afterend', $tempLi)
-  $tempLi.insertAdjacentElement('beforeend', $tempP)
+  $line.appendChild($startDot)
+  $line.appendChild($endArrow)
+  $line.appendChild($title)
+  $title.parentNode.appendChild($date)
+  $line.appendChild($currentTime)
 
-  $tempLi.textContent = events.title
-  $tempP.textContent = 'content'
+  $line.classList.add('timeline')
+  $title.classList.add('events')
+  $startDot.classList.add('start-dot')
+  $endArrow.classList.add('end-arrow')
+  $currentTime.classList.add('end')
 
-  // $tempLi.textContent = events.title
-  // console.log($tempLi.textContent)
-  // $tempP.textContent = events.date
-  // console.log($tempP.textContent)
+  $title.textContent = events.title
+  console.log($title.textContent)
+  $date.textContent = events.date
+  console.log($date.textContent)
+  $currentTime.textContent = 'Current Date: ' + Date()
+
+  console.log($line)
+  return $line
+}
+
+var timelineDiv = document.querySelector('.main-content')
+for (var i = 0; i < data.length; i++) {
+  timelineDiv.appendChild(makeTimeline(data[i]))
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
@@ -50,10 +73,21 @@ window.addEventListener('DOMContentLoaded', function (event) {
     }
     data.push(newData)
 
-    for (var i = 0; i < data.length; i++) {
-      makeEvent(data[i])
-    }
+    var $timeline = document.querySelector('.timeline')
 
+    var increment = 80 / data.length
+    var currentPosition = 10
+
+    for (var i = 0; i < data.length; i++) {
+      var $event = document.createElement('div')
+      $event.textContent = data[i].title
+      $event.classList.add('events')
+
+      $event.style.left = currentPosition + '%'
+      currentPosition += increment
+
+      $timeline.appendChild($event)
+    }
     formMain()
   })
 })
@@ -65,6 +99,3 @@ $createButton.addEventListener('click', mainForm)
 var $toMain = document.querySelector('#form-return')
 
 $toMain.addEventListener('click', formMain)
-
-var $current = document.querySelector('.end')
-$current.textContent = 'Current Date: ' + Date()

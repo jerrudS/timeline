@@ -9,7 +9,7 @@ h1,
   background-color: #f45b69;
 }
 
-section {
+.main-content {
   height: 620px;
 }
 
@@ -18,7 +18,7 @@ section {
   width: 15px;
   border-radius: 50%;
   background: black;
-  top: 243px;
+  top: 220px;
   position: relative;
   margin-left: 35px;
 }
@@ -28,7 +28,7 @@ section {
   border-bottom: 15px solid transparent;
   border-top: 15px solid transparent;
   position: relative;
-  top: 210px;
+  top: 200px;
   float: right;
   margin-right: 65px;
 }
@@ -43,7 +43,7 @@ section {
 }
 
 .timeline {
-  top: 235px;
+  top: 240px;
   position: relative;
   border-top: 2px dotted black;
   margin-left: 50px;
