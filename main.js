@@ -21,6 +21,13 @@ function mainForm() {
   $eventForm.setAttribute('class', 'view-form')
 }
 
+function mainEvent() {
+  var $mainPage = document.querySelector('.view-main')
+  var $previewForm = document.querySelector('.hidden.view-event')
+  $mainPage.setAttribute('class', 'hidden view-main')
+  $previewForm.setAttribute('class', 'view-event')
+}
+
 function makeTimeline(events) {
   var $timeline = document.createElement('ul')
   var $mainLi = document.createElement('li')
@@ -104,9 +111,10 @@ $eventData.addEventListener('submit', function (event) {
 })
 
 var $createButton = document.querySelector('#new-button')
-
 $createButton.addEventListener('click', mainForm)
 
 var $toMain = document.querySelector('#form-return')
-
 $toMain.addEventListener('click', formMain)
+
+var $events = document.querySelector('.events')
+$events.addEventListener('click', mainEvent)
