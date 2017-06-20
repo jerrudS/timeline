@@ -1,20 +1,104 @@
 * {
-  font-family: 'Rokkitt', serif;
+  font-family: 'Rokkitt', sans-serif;
   box-sizing: border-box;
-  font-size: 25px;
+  background-color: #a3b2b0;
 }
 
-body {
-  overflow: hidden;
+h1,
+#header-div {
+  background-color: #f45b69;
+}
+
+section {
+  height: 620px;
+}
+
+.start-dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: black;
+  top: 257px;
+  position: relative;
+  margin-left: 16px;
+}
+
+.end-arrow {
+  border-left: 15px solid black;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+  position: relative;
+  top: 222px;
+  float: right;
+  margin-right: 14px;
+}
+
+.timeline {
+  top: 250px;
+  position: relative;
+  border-top: 1px solid black;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style-type: none;
+}
+
+.middle {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  list-style-type: none;
+}
+
+.end {
+  position: absolute;
+  top: 0;
+  right: 0;
+  list-style-type: none;
+}
+
+.create-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-primary {
+  background-color: #3d3d71;
+  border-color: #29297e;
+}
+
+.btn-success {
+  background-color: #28794c;
+  border-color: #357350;
+}
+
+#event,
+.main {
+  max-width: 1440px;
+}
+
+#main-header {
+  padding-left: 60px;
+  padding-top: 35px;
+  background-color: #bc1410;
+  height: 150px;
+}
+
+h1 {
+  background-color: #bc1410;
 }
 
 #input-label {
   font-weight: normal;
 }
 
-form {
-  width: 100%;
-  padding-right: 100px;
-  padding-left: 50px;
-  padding-top: 20px;
+#form-return {
+  margin-top: 10px;
 }
