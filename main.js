@@ -54,8 +54,10 @@ function makeTimeline(events) {
     var $eventLi = document.createElement('li')
     var $eventTitle = document.createElement('p')
     var $eventDate = document.createElement('p')
+    var date = new Date(data[i].date).toUTCString()
+    date = date.split(' ').slice(0, 4).join(' ')
     $eventTitle.textContent = data[i].title
-    $eventDate.textContent = new Date(data[i].date).toDateString()
+    $eventDate.textContent = date
     $eventLi.classList.add('events')
 
     $eventLi.appendChild($eventTitle)
