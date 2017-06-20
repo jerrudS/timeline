@@ -4,8 +4,7 @@
   background-color: #a3b2b0;
 }
 
-h1,
-#header-div {
+h1 {
   background-color: #f45b69;
 }
 
@@ -157,4 +156,13 @@ h1 {
 
 #form-return {
   margin-top: 10px;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#title-header {
+  margin-top: 30px;
 }

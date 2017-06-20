@@ -3,7 +3,8 @@
 var data = [
   {
     title: 'Event1',
-    date: 555555
+    date: 555555,
+    description: 'Some text'
   }
 ]
 
@@ -117,4 +118,24 @@ var $toMain = document.querySelector('#form-return')
 $toMain.addEventListener('click', formMain)
 
 var $events = document.querySelector('.events')
-$events.addEventListener('click', mainEvent)
+
+$events.addEventListener('click', function (event) {
+  mainEvent()
+  for (var i = 0; i < data.length; i++) {
+    var $titleDiv = document.querySelector('#title-header')
+    var $dateDiv = document.querySelector('#date-header')
+    var $eventTitle = document.createElement('h2')
+    var $eventDate = document.createElement('h3')
+    var $description = document.querySelector('.description')
+    var date = new Date(data[i].date).toUTCString()
+    date = date.split(' ').slice(0, 4).join(' ')
+
+    $titleDiv.appendChild($eventTitle)
+    $dateDiv.appendChild($eventDate)
+
+    $eventTitle.textContent = data[i].title
+    $eventDate.textContent = date
+    $description.textContent = data[i].description
+    console.log($titleDiv)
+  }
+})
