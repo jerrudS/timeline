@@ -52,21 +52,9 @@ h1,
   margin-right: 80px;
 }
 
-.start {
-  position: absolute;
-  top: 0;
-  left: -40px;
-  list-style-type: none;
-  border: solid 1px black;
-  padding: 4px 8px;
-  margin-top: 20px;
-  background-color: white;
-  box-shadow: 2px 2px #46484a;
-}
-
 .events {
   position: absolute;
-  top: -50px;
+  top: -75px;
   left: 0;
   list-style-type: none;
   border: solid 1px black;
@@ -76,16 +64,29 @@ h1,
   box-shadow: 2px 2px #46484a;
 }
 
-.events p {
+.birthdate {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  list-style-type: none;
+  width: 125px;
+  border: solid 1px black;
+  padding: 4px 8px;
+  margin-top: 13px;
+  background-color: white;
+  box-shadow: 2px 2px #46484a;
+}
+
+.events p,
+.birthdate p {
   background-color: white;
   margin: auto;
 }
 
 .end {
   position: absolute;
-  top: 0;
-  right: -70px;
   list-style-type: none;
+  right: -50px;
   width: 125px;
   border: solid 1px black;
   padding: 4px 8px;
@@ -101,8 +102,6 @@ h1,
   transform: translateX(-50%);
 }
 
-/* event form */
-
 #event,
 .main {
   max-width: 1440px;
@@ -116,28 +115,12 @@ h1,
   height: 150px;
 }
 
-.start {
-  position: absolute;
-  top: 0;
-  left: 0;
-  list-style-type: none;
-}
-
-.end {
-  position: absolute;
-  top: 0;
-  right: 0;
-  list-style-type: none;
-}
-
-.create-button {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .btn-primary {
+  background-color: #28285d;
+  border-color: #141443;
+}
+
+.btn-primary:hover {
   background-color: #3d3d71;
   border-color: #29297e;
 }
@@ -145,6 +128,11 @@ h1,
 .btn-success {
   background-color: #28794c;
   border-color: #357350;
+}
+
+.btn-success:hover {
+  background-color: #4b976c;
+  border-color: #0f5b30;
 }
 
 #event,

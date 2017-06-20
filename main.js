@@ -4,14 +4,6 @@ var data = [
   {
     title: 'Event1',
     date: 555555
-  },
-  {
-    title: 'Event1',
-    date: 555555
-  },
-  {
-    title: 'Event1',
-    date: 555555
   }
 ]
 
@@ -31,7 +23,8 @@ function mainForm() {
 
 function makeTimeline(events) {
   var $timeline = document.createElement('ul')
-  var $title = document.createElement('li')
+  var $mainLi = document.createElement('li')
+  var $title = document.createElement('p')
   var $date = document.createElement('p')
   var $currentTime = document.createElement('li')
   var $startDot = document.createElement('div')
@@ -39,32 +32,42 @@ function makeTimeline(events) {
 
   $timeline.appendChild($startDot)
   $timeline.appendChild($endArrow)
-  $timeline.appendChild($title)
-  $title.appendChild($date)
+  $timeline.appendChild($mainLi)
+  $mainLi.appendChild($title)
+  $mainLi.appendChild($date)
   $timeline.appendChild($currentTime)
 
   $timeline.classList.add('timeline')
-  $title.classList.add('events')
+  $mainLi.classList.add('birthdate')
   $startDot.classList.add('start-dot')
   $endArrow.classList.add('end-arrow')
   $currentTime.classList.add('end')
 
   $title.textContent = '"name of user" was born.'
   $date.textContent = 'Birthdate'
-  $currentTime.textContent = 'Current Date: ' + Date()
+  $currentTime.textContent = 'Current Date: ' + new Date(Date.now()).toDateString()
 
   var increment = 80 / data.length
   var currentPosition = 10
 
   for (var i = 0; i < data.length; i++) {
-    var $event = document.createElement('div')
-    $event.textContent = data[i].title
-    $event.classList.add('events')
+    var $eventLi = document.createElement('li')
+    var $eventTitle = document.createElement('p')
+    var $eventDate = document.createElement('p')
+    $eventTitle.textContent = data[i].title
+    $eventDate.textContent = new Date(data[i].date).toDateString()
+    $eventLi.classList.add('events')
 
-    $event.style.left = currentPosition + '%'
+    $eventLi.appendChild($eventTitle)
+    $eventLi.appendChild($eventDate)
+
+    $eventLi.style.left = currentPosition + '%'
     currentPosition += increment
 
-    $timeline.appendChild($event)
+    if (i % 2 === 1) {
+      $eventLi.style.top = 50 + '%'
+    }
+    $timeline.appendChild($eventLi)
   }
   console.log($timeline)
   return $timeline
