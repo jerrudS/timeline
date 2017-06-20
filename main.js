@@ -4,6 +4,14 @@ var data = [
   {
     title: 'Event1',
     date: 555555
+  },
+  {
+    title: 'Event1',
+    date: 555555
+  },
+  {
+    title: 'Event1',
+    date: 555555
   }
 ]
 
@@ -22,74 +30,72 @@ function mainForm() {
 }
 
 function makeTimeline(events) {
-  var $line = document.createElement('ul')
+  var $timeline = document.createElement('ul')
   var $title = document.createElement('li')
-  var $date = document.createElement('li')
+  var $date = document.createElement('p')
   var $currentTime = document.createElement('li')
   var $startDot = document.createElement('div')
   var $endArrow = document.createElement('div')
 
-  $line.appendChild($startDot)
-  $line.appendChild($endArrow)
-  $line.appendChild($title)
-  $title.parentNode.appendChild($date)
-  $line.appendChild($currentTime)
+  $timeline.appendChild($startDot)
+  $timeline.appendChild($endArrow)
+  $timeline.appendChild($title)
+  $title.appendChild($date)
+  $timeline.appendChild($currentTime)
 
-  $line.classList.add('timeline')
+  $timeline.classList.add('timeline')
   $title.classList.add('events')
   $startDot.classList.add('start-dot')
   $endArrow.classList.add('end-arrow')
   $currentTime.classList.add('end')
 
-  $title.textContent = events.title
-  console.log($title.textContent)
-  $date.textContent = events.date
-  console.log($date.textContent)
+  $title.textContent = '"name of user" was born.'
+  $date.textContent = 'Birthdate'
   $currentTime.textContent = 'Current Date: ' + Date()
 
-  console.log($line)
-  return $line
+  var increment = 80 / data.length
+  var currentPosition = 10
+
+  for (var i = 0; i < data.length; i++) {
+    var $event = document.createElement('div')
+    $event.textContent = data[i].title
+    $event.classList.add('events')
+
+    $event.style.left = currentPosition + '%'
+    currentPosition += increment
+
+    $timeline.appendChild($event)
+  }
+  console.log($timeline)
+  return $timeline
 }
 
-var timelineDiv = document.querySelector('.main-content')
-for (var i = 0; i < data.length; i++) {
-  timelineDiv.appendChild(makeTimeline(data[i]))
-}
+var $timeline = makeTimeline(data)
+var $content = document.querySelector('#timeline-location')
+$content.appendChild($timeline)
 
-window.addEventListener('DOMContentLoaded', function (event) {
-  var $eventData = document.querySelector('#data')
+var $eventData = document.querySelector('#data')
 
-  $eventData.addEventListener('submit', function (event) {
-    event.preventDefault()
+$eventData.addEventListener('submit', function (event) {
+  event.preventDefault()
 
-    var userFormData = new FormData($eventData)
-    console.log(userFormData)
+  var userFormData = new FormData($eventData)
+  console.log(userFormData)
 
-    var newData = {
-      title: userFormData.get('title'),
-      date: Date.parse(userFormData.get('date')),
-      description: userFormData.get('description'),
-      file: userFormData.get('file')
-    }
-    data.push(newData)
+  var newData = {
+    title: userFormData.get('title'),
+    date: Date.parse(userFormData.get('date')),
+    description: userFormData.get('description'),
+    file: userFormData.get('file')
+  }
+  data.push(newData)
 
-    var $timeline = document.querySelector('.timeline')
+  var $timeline = makeTimeline(data)
+  var $content = document.querySelector('#timeline-location')
+  $content.innerHTML = ''
+  $content.appendChild($timeline)
 
-    var increment = 80 / data.length
-    var currentPosition = 10
-
-    for (var i = 0; i < data.length; i++) {
-      var $event = document.createElement('div')
-      $event.textContent = data[i].title
-      $event.classList.add('events')
-
-      $event.style.left = currentPosition + '%'
-      currentPosition += increment
-
-      $timeline.appendChild($event)
-    }
-    formMain()
-  })
+  formMain()
 })
 
 var $createButton = document.querySelector('#new-button')
