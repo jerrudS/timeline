@@ -180,3 +180,16 @@ h1 {
 #title-header {
   margin-top: 30px;
 }
+
+#media {
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  left: 50%;
+  transform: translateX(-55%);
+}
+
+img {
+  height: 300px;
+  width: 400px;
+}

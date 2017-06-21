@@ -4,7 +4,8 @@ var data = [
   {
     title: 'Event1',
     date: 555555,
-    description: 'Some text'
+    description: 'Some text',
+    file: 'lion-image.jpg'
   }
 ]
 
@@ -139,17 +140,25 @@ function makeEventPage() {
   for (var i = 0; i < data.length; i++) {
     var $titleDiv = document.querySelector('#title-header')
     var $dateDiv = document.querySelector('#date-header')
+    var $description = document.querySelector('.description')
+    var $fileDiv = document.querySelector('#media')
+
     var $eventTitle = document.createElement('h2')
     var $eventDate = document.createElement('h3')
-    var $description = document.querySelector('.description')
+    var $eventFile = document.createElement('img')
+
     var date = new Date(data[i].date).toUTCString()
     date = date.split(' ').slice(0, 4).join(' ')
 
     $titleDiv.appendChild($eventTitle)
     $dateDiv.appendChild($eventDate)
+    $fileDiv.appendChild($eventFile)
 
     $eventTitle.textContent = data[i].title
     $eventDate.textContent = date
     $description.textContent = data[i].description
+    $eventFile.setAttribute('alt', 'default')
+    $eventFile.setAttribute('src', 'lion-image.jpg')
+    console.log($fileDiv)
   }
 }
