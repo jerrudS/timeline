@@ -68,6 +68,10 @@ function makeTimeline(events) {
     $eventDate.textContent = date
     $eventLi.classList.add('events')
 
+    $eventLi.setAttribute('data-event', true)
+    $eventTitle.setAttribute('data-event', true)
+    $eventDate.setAttribute('data-event', true)
+
     $eventLi.appendChild($eventTitle)
     $eventLi.appendChild($eventDate)
 
@@ -84,6 +88,14 @@ function makeTimeline(events) {
 }
 
 var $timeline = makeTimeline(data)
+$timeline.addEventListener('click', function (events) {
+  console.log(event.target)
+  if (event.target.getAttribute('data-event')) {
+    console.log(event.target)
+    mainEvent()
+    makeEventPage()
+  }
+})
 var $content = document.querySelector('#timeline-location')
 $content.appendChild($timeline)
 
@@ -104,10 +116,16 @@ $eventData.addEventListener('submit', function (event) {
   data.push(newData)
 
   var $timeline = makeTimeline(data)
-  var $content = document.querySelector('#timeline-location')
   $content.innerHTML = ''
   $content.appendChild($timeline)
 
+  $timeline.addEventListener('click', function (events) {
+    console.log(event.target)
+    if (event.target.getAttribute('data-event')) {
+      mainEvent()
+      makeEventPage()
+    }
+  })
   formMain()
 })
 
@@ -117,10 +135,7 @@ $createButton.addEventListener('click', mainForm)
 var $toMain = document.querySelector('#form-return')
 $toMain.addEventListener('click', formMain)
 
-var $events = document.querySelector('.events')
-
-$events.addEventListener('click', function (event) {
-  mainEvent()
+function makeEventPage() {
   for (var i = 0; i < data.length; i++) {
     var $titleDiv = document.querySelector('#title-header')
     var $dateDiv = document.querySelector('#date-header')
@@ -136,6 +151,5 @@ $events.addEventListener('click', function (event) {
     $eventTitle.textContent = data[i].title
     $eventDate.textContent = date
     $description.textContent = data[i].description
-    console.log($titleDiv)
   }
-})
+}
