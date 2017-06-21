@@ -88,7 +88,7 @@ function makeTimeline(events) {
 }
 
 var $timeline = makeTimeline(data)
-$timeline.addEventListener('click', function (events) {
+$timeline.addEventListener('click', function (event) {
   console.log(event.target)
   if (event.target.getAttribute('data-event')) {
     console.log(event.target)
@@ -119,7 +119,7 @@ $eventData.addEventListener('submit', function (event) {
   $content.innerHTML = ''
   $content.appendChild($timeline)
 
-  $timeline.addEventListener('click', function (events) {
+  $timeline.addEventListener('click', function (event) {
     console.log(event.target)
     if (event.target.getAttribute('data-event')) {
       mainEvent()
