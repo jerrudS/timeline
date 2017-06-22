@@ -110,7 +110,14 @@ h1 {
 
 .create-button {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.remove-bn {
+  position: absolute;
+  bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -146,6 +153,16 @@ h1 {
 .btn-success:hover {
   background-color: #4b976c;
   border-color: #0f5b30;
+}
+
+.btn-warning {
+  background-color: #856b2c;
+  border-color: #624b13;
+}
+
+.btn-warning:hover {
+  background-color: #c9b176;
+  border-color: #a38949;
 }
 
 #event,
