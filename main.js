@@ -168,15 +168,11 @@ function makeEventPage() {
 
     $eventUrl.removeAttribute('src')
     $eventUrl.removeAttribute('alt')
-    console.log($eventUrl)
 
     $eventTitle.textContent = data[i].title
     $eventDate.textContent = date
     $description.textContent = data[i].description
     $eventUrl.setAttribute('alt', 'user media')
     $eventUrl.setAttribute('src', data[i].url)
-    console.log($eventUrl)
-    console.log(data[i].url)
-    console.log($dateDiv)
   }
 }
