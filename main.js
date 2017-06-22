@@ -164,10 +164,8 @@ function makeEventPage() {
 
     $titleDiv.appendChild($eventTitle)
     $dateDiv.appendChild($eventDate)
+    $urlDiv.innerHTML = ''
     $urlDiv.appendChild($eventUrl)
-
-    $eventUrl.removeAttribute('src')
-    $eventUrl.removeAttribute('alt')
 
     $eventTitle.textContent = data[i].title
     $eventDate.textContent = date
