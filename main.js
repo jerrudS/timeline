@@ -5,7 +5,8 @@ var data = [
     title: 'Event1',
     date: 555555,
     description: 'Some text',
-    file: 'lion-image.jpg'
+    url: 'http://www.freeclipart.pw/uploads/small-red-apple-clip-art-at-clker-com--vector-clip-art-online--.png'
+    // backend required file: 'lion-image.jpg'
   }
 ]
 
@@ -116,7 +117,8 @@ $eventData.addEventListener('submit', function (event) {
     title: userFormData.get('title'),
     date: Date.parse(userFormData.get('date')),
     description: userFormData.get('description'),
-    file: userFormData.get('file')
+    url: userFormData.get('url')
+    // backend required file: userFormData.get('file')
   }
   data.push(newData)
 
@@ -147,29 +149,34 @@ function makeEventPage() {
     var $titleDiv = document.querySelector('#title-header')
     var $dateDiv = document.querySelector('#date-header')
     var $description = document.querySelector('.description')
-    var $fileDiv = document.querySelector('#media')
+    var $urlDiv = document.querySelector('#media')
 
     $titleDiv.textContent = ''
     $dateDiv.textContent = ''
     $description.textContent = ''
-    $fileDiv.setAttribute = ('src', 'null')
-    $fileDiv.setAttribute = ('alt', 'null')
 
     var $eventTitle = document.createElement('h2')
     var $eventDate = document.createElement('h3')
-    var $eventFile = document.createElement('img')
+    var $eventUrl = document.createElement('img')
 
     var date = new Date(data[i].date).toUTCString()
     date = date.split(' ').slice(0, 4).join(' ')
 
     $titleDiv.appendChild($eventTitle)
     $dateDiv.appendChild($eventDate)
-    $fileDiv.appendChild($eventFile)
+    $urlDiv.appendChild($eventUrl)
+
+    $eventUrl.removeAttribute('src')
+    $eventUrl.removeAttribute('alt')
+    console.log($eventUrl)
 
     $eventTitle.textContent = data[i].title
     $eventDate.textContent = date
     $description.textContent = data[i].description
-    $eventFile.setAttribute('alt', 'default')
-    $eventFile.setAttribute('src', 'lion-image.jpg')
+    $eventUrl.setAttribute('alt', 'user media')
+    $eventUrl.setAttribute('src', data[i].url)
+    console.log($eventUrl)
+    console.log(data[i].url)
+    console.log($dateDiv)
   }
 }
