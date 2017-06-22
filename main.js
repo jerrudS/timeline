@@ -30,6 +30,13 @@ function mainEvent() {
   $previewForm.setAttribute('class', 'view-event')
 }
 
+function eventMain() {
+  var $mainPage = document.querySelector('.hidden.view-main')
+  var $eventPage = document.querySelector('.view-event')
+  $mainPage.setAttribute('class', 'view-main')
+  $eventPage.setAttribute('class', 'hidden view-event')
+}
+
 function makeTimeline(events) {
   var $timeline = document.createElement('ul')
   var $mainLi = document.createElement('li')
@@ -90,9 +97,7 @@ function makeTimeline(events) {
 
 var $timeline = makeTimeline(data)
 $timeline.addEventListener('click', function (event) {
-  console.log(event.target)
   if (event.target.getAttribute('data-event')) {
-    console.log(event.target)
     mainEvent()
     makeEventPage()
   }
@@ -106,7 +111,6 @@ $eventData.addEventListener('submit', function (event) {
   event.preventDefault()
 
   var userFormData = new FormData($eventData)
-  console.log(userFormData)
 
   var newData = {
     title: userFormData.get('title'),
@@ -121,7 +125,6 @@ $eventData.addEventListener('submit', function (event) {
   $content.appendChild($timeline)
 
   $timeline.addEventListener('click', function (event) {
-    console.log(event.target)
     if (event.target.getAttribute('data-event')) {
       mainEvent()
       makeEventPage()
@@ -133,10 +136,14 @@ $eventData.addEventListener('submit', function (event) {
 var $createButton = document.querySelector('#new-button')
 $createButton.addEventListener('click', mainForm)
 
-var $toMain = document.querySelector('#form-return')
-$toMain.addEventListener('click', formMain)
+var $formMain = document.querySelector('#form-return')
+$formMain.addEventListener('click', formMain)
+
+var $eventMain = document.querySelector('#event-return')
+$eventMain.addEventListener('click', eventMain)
 
 function makeEventPage() {
+
   for (var i = 0; i < data.length; i++) {
     var $titleDiv = document.querySelector('#title-header')
     var $dateDiv = document.querySelector('#date-header')
@@ -159,6 +166,5 @@ function makeEventPage() {
     $description.textContent = data[i].description
     $eventFile.setAttribute('alt', 'default')
     $eventFile.setAttribute('src', 'lion-image.jpg')
-    console.log($fileDiv)
   }
 }
