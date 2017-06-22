@@ -188,3 +188,10 @@ function highlight() {
     $lightEvent[i].classList.add('highlight')
   }
 }
+
+function remove() {
+  var $highEvent = document.querySelectorAll('.highlight')
+  for (var i = 0; i < $highEvent.length; i++) {
+    $highEvent[i].innerHTML = ''
+  }
+}
