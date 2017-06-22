@@ -92,7 +92,6 @@ function makeTimeline(events) {
     }
     $timeline.appendChild($eventLi)
   }
-  console.log($timeline)
   return $timeline
 }
 
@@ -120,6 +119,14 @@ $eventData.addEventListener('submit', function (event) {
     description: userFormData.get('description'),
     url: userFormData.get('url')
     // backend required file: userFormData.get('file')
+  }
+  if (newData.title === '') {
+    alert('Please enter a title.')
+    return
+  }
+  if (isNaN(newData.date)) {
+    alert('Please enter a date.')
+    return
   }
   data.push(newData)
 
@@ -168,10 +175,8 @@ function makeEventPage() {
 
     $titleDiv.appendChild($eventTitle)
     $dateDiv.appendChild($eventDate)
+    $urlDiv.innerHTML = ''
     $urlDiv.appendChild($eventUrl)
-
-    $eventUrl.removeAttribute('src')
-    $eventUrl.removeAttribute('alt')
 
     $eventTitle.textContent = data[i].title
     $eventDate.textContent = date
@@ -193,5 +198,6 @@ function remove() {
   var $highEvent = document.querySelectorAll('.highlight')
   for (var i = 0; i < $highEvent.length; i++) {
     $highEvent[i].innerHTML = ''
+    console.log($highEvent[i])
   }
 }
