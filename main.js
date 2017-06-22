@@ -103,6 +103,7 @@ $timeline.addEventListener('click', function (event) {
     makeEventPage()
   }
 })
+
 var $content = document.querySelector('#timeline-location')
 $content.appendChild($timeline)
 
@@ -144,6 +145,9 @@ $formMain.addEventListener('click', formMain)
 var $eventMain = document.querySelector('#event-return')
 $eventMain.addEventListener('click', eventMain)
 
+var $removeButton = document.querySelector('#remove')
+$removeButton.addEventListener('click', highlight)
+
 function makeEventPage() {
   for (var i = 0; i < data.length; i++) {
     var $titleDiv = document.querySelector('#title-header')
@@ -174,5 +178,13 @@ function makeEventPage() {
     $description.textContent = data[i].description
     $eventUrl.setAttribute('alt', 'user media')
     $eventUrl.setAttribute('src', data[i].url)
+  }
+}
+
+function highlight() {
+  var $lightEvent = document.querySelectorAll('.events')
+  for (var i = 0; i < $lightEvent.length; i++) {
+    $lightEvent[i].classList.remove('events')
+    $lightEvent[i].classList.add('highlight')
   }
 }

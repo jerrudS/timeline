@@ -63,6 +63,24 @@ h1 {
   box-shadow: 2px 2px #46484a;
 }
 
+.highlight {
+  position: absolute;
+  top: -75px;
+  left: 0;
+  list-style-type: none;
+  border: solid 1px black;
+  padding: 4px 8px;
+  margin-top: 13px;
+  background-color: #856b2c;
+  box-shadow: 2px 2px #46484a;
+  font-weight: bold;
+}
+
+.highlight p {
+  background-color: #856b2c;
+  margin: auto;
+}
+
 .events:hover {
   position: absolute;
   top: -75px;
