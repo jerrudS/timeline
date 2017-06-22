@@ -143,12 +143,17 @@ var $eventMain = document.querySelector('#event-return')
 $eventMain.addEventListener('click', eventMain)
 
 function makeEventPage() {
-
   for (var i = 0; i < data.length; i++) {
     var $titleDiv = document.querySelector('#title-header')
     var $dateDiv = document.querySelector('#date-header')
     var $description = document.querySelector('.description')
     var $fileDiv = document.querySelector('#media')
+
+    $titleDiv.textContent = ''
+    $dateDiv.textContent = ''
+    $description.textContent = ''
+    $fileDiv.setAttribute = ('src', 'null')
+    $fileDiv.setAttribute = ('alt', 'null')
 
     var $eventTitle = document.createElement('h2')
     var $eventDate = document.createElement('h3')
