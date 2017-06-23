@@ -1,2 +1,2 @@
 # timeline
-A website for everyone to document and organize life events chronologically.
+A website for the nostalgic user to document and organize life events chronologically.
