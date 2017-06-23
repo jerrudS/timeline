@@ -120,14 +120,6 @@ $eventData.addEventListener('submit', function (event) {
     url: userFormData.get('url')
     // backend required file: userFormData.get('file')
   }
-  if (newData.title === '') {
-    alert('Please enter a title.')
-    return
-  }
-  if (isNaN(newData.date)) {
-    alert('Please enter a date.')
-    return
-  }
   data.push(newData)
 
   var $timeline = makeTimeline(data)
@@ -201,3 +193,24 @@ function remove() {
     console.log($highEvent[i])
   }
 }
+
+var $previewButton = document.querySelector('#preview-button')
+$previewButton.addEventListener('click', function () {
+  var $buttonsDiv = document.querySelector('#buttons')
+  var $previewImg = document.createElement('img')
+  var $formData = document.querySelector('#data')
+
+  $buttonsDiv.appendChild($previewImg)
+  $previewImg.setAttribute('class', 'preview-image')
+
+  var userFormImage = new FormData($formData)
+  console.log(userFormImage)
+
+  var newData = {
+    url: userFormImage.get('url')
+  }
+  console.log(newData)
+
+  $previewImg.setAttribute('src', newData.url)
+  console.log($previewImg)
+})

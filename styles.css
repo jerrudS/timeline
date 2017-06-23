@@ -4,10 +4,6 @@
   background-color: #a3b2b0;
 }
 
-h1 {
-  background-color: #f45b69;
-}
-
 .main-content {
   height: 620px;
 }
@@ -71,13 +67,13 @@ h1 {
   border: solid 1px black;
   padding: 4px 8px;
   margin-top: 13px;
-  background-color: #856b2c;
+  background-color: #6d6025;
   box-shadow: 2px 2px #46484a;
   font-weight: bold;
 }
 
 .highlight p {
-  background-color: #856b2c;
+  background-color: #6d6025;
   margin: auto;
 }
 
@@ -133,6 +129,10 @@ h1 {
   transform: translateX(-50%);
 }
 
+.create-new {
+  margin-top: 10px;
+}
+
 .remove-bn {
   position: absolute;
   bottom: 3%;
@@ -149,38 +149,39 @@ h1 {
 #event-header {
   padding-left: 60px;
   padding-top: 20px;
-  background-color: #f45b69;
+  background-color: ##2c3e50;
   height: 150px;
 }
 
 .btn-primary {
-  background-color: #28285d;
-  border-color: #141443;
+  background-color: #264a4a;
+  border-color: #092f2f;
 }
 
 .btn-primary:hover {
-  background-color: #3d3d71;
-  border-color: #29297e;
+  background-color: #3a6565;
+  border-color: #164141;
 }
 
 .btn-success {
-  background-color: #28794c;
-  border-color: #357350;
+  background-color: #6e3f6e;
+  border-color: #471847;
 }
 
 .btn-success:hover {
-  background-color: #4b976c;
-  border-color: #0f5b30;
+  background-color: #471847;
+  border-color: #330933;
 }
 
 .btn-warning {
-  background-color: #856b2c;
-  border-color: #624b13;
+  background-color: #7b3f3f;
+  border-color: #6d2525;
 }
 
-.btn-warning:hover {
-  background-color: #c9b176;
-  border-color: #a38949;
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: #a96161;
+  border-color: #6d2525;
 }
 
 #event,
@@ -191,12 +192,13 @@ h1 {
 #main-header {
   padding-left: 60px;
   padding-top: 35px;
-  background-color: #bc1410;
+  background-color: #2c3e50;
   height: 150px;
 }
 
 h1 {
-  background-color: #bc1410;
+  background-color: #2c3e50;
+  color: white;
 }
 
 #input-label {
@@ -231,4 +233,11 @@ img {
 
 #event-return {
   float: right;
+}
+
+.preview-image {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
 }
